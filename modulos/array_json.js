@@ -202,35 +202,97 @@ const conceitoJSON = function(){
 }
 
 const cadastroProdutos = function(){
+    //Variavel para guardar varios produtos
+    let arrayProdutos=[]
+
+    //Váriavel para guardar o array que sera representado por um atributo do tipo JSON
+    let JSONProdutos = {};
+
     let categorias = [
-                         {id: 1, nome: 'Hardware', descricao: 'Equipamentos de hardware para PC'},   
-                         {id: 2, nome: 'Periféricos', descricao: 'Periféricos para PC'},
-                         {id: 3, nome: 'Games', descricao: 'Jogos e acessórios para PC'},
-                         {id: 4, nome: 'Escritório', descricao: 'Itens de infórmatica para escritório'}      
-                    ];
+                         {id: 1, nome_categoria: 'Hardware', descricao_categoria: 'Equipamentos de hardware para PC'},   
+                         {id: 2, nome_categoria: 'Periféricos', descricao_categoria: 'Periféricos para PC'},
+                         {id: 3, nome_categoria: 'Games', descricao_categoria: 'Jogos e acessórios para PC'},
+                         {id: 4, nome_categoria: 'Escritório', descricao_categoria: 'Itens de infórmatica para escritório'},
+                         {id: 5, nome_categoria: 'Acessorio', descricao_categoria: 'Acessórios de Infoórmatica'}    
+                     ];
 
     let cores = [
-                {id: 1, nome: 'Preto'},         
-                {id: 2, nome: 'Branco'},     
-                {id: 3, nome: 'Cinza'},     
-                {id: 4, nome: 'Azul'},     
-                {id: 5, nome: 'Vermelho'},     
+                {id: 1, nome_cor: 'Preto'},         
+                {id: 2, nome_cor: 'Branco'},     
+                {id: 3, nome_cor: 'Cinza'},     
+                {id: 4, nome_cor: 'Azul'},     
+                {id: 5, nome_cor: 'Vermelho'}
+                
                 ];
                 
     let marcas = [
-                {id: 1, nome: 'Dell', telefone:'1192992982', email: 'dell@gmail.com'},
-                {id: 2, nome: 'Intel', telefone:'114542982', email: 'intel@gmail.com'},
-                {id: 3, nome: 'AMD', telefone:'1323492982', email: 'amd@gmail.com'},
-                {id: 4, nome: 'Multilaser', telefone:'11168237982', email: 'multilaser@gmail.com'},
-                {id: 5, nome: 'Logitech', telefone:'11391276982', email: 'logitech@gmail.com'},
-                {id: 6, nome: 'Positivo', telefone:'1192022982', email: 'positivo@gmail.com'}
-                  ];
+                {id: 1, nome_marca: 'Dell', telefone:'1192992982', email: 'dell@gmail.com'},
+                {id: 2, nome_marca: 'Intel', telefone:'114542982', email: 'intel@gmail.com'},
+                {id: 3, nome_marca: 'AMD', telefone:'1323492982', email: 'amd@gmail.com'},
+                {id: 4, nome_marca: 'Multilaser', telefone:'11168237982', email: 'multilaser@gmail.com'},
+                {id: 5, nome_marca: 'Logitech', telefone:'11391276982', email: 'logitech@gmail.com'},
+                {id: 6, nome_marca: 'Positivo', telefone:'1192022982', email: 'positivo@gmail.com'}
+                 ];
 
+
+    let produto1 = {
+                      id: 1,
+                      nome: 'mouse',
+                      descricao: 'Mouse optico com fio',
+                      valor: 80,
+                      qtde:200,
+                      categoria: categorias[1],
+                      cor: [
+                             cores[0],
+                             cores[1]
+                           ],
+                      marca: marcas [0]
+                    };      
+                    
+    let produto2 = {
+
+        id: 2,
+        nome: 'teclado',
+        descricao: 'teclado mecanico com fio',
+        valor: 230,
+        qtde:120,
+        categoria: categorias[1],
+        cor: cores,
+        marca: marcas [2]
+                   };     
+                   
+     let produto3 = {
+
+                    id: 3,
+                    nome: 'Caixa de Som',
+                    descricao: 'Caixa de som com fio',
+                    valor: 100,
+                    qtde:80,
+                    categoria: categorias[4],
+                    cor: [
+                        cores[0],
+                        cores[1],
+                        cores[2]
+                    ],
+                    marca: marcas [3]
+                    }; 
+                   
+                    //Criando elementos dentro do array de produtos
+                    arrayProdutos.push(produto1,produto2,produto3);
+                   
+                    // Adcionando o array com todos os produtos em um atributo do tipo JSON 
+                    JSONProdutos.produtos = arrayProdutos;
+                    JSONProdutos.count = arrayProdutos.length;
+
+                    return JSONProdutos;
             }
+
+            console.log(cadastroProdutos());
 
 
 // usado para executar nossa função
 
+cadastroProdutos();
 //conceitoJSON();
 //conceitoArray();
 //percorrendoArray();
