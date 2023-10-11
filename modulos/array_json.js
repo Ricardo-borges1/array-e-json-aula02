@@ -287,6 +287,10 @@ const cadastroProdutos = function(){
                     return JSONProdutos;
             }
 
+            const exibirPodutos=function (cadastroProdutos){
+                 let JSONProdutos=cadastroProdutos
+            }
+
             console.log(cadastroProdutos());
 
 
